@@ -23,7 +23,7 @@ while (url != "stop"):
         second_part = ", [En ligne]. Adresse URL : " + url
 
         # Set HTML formatted clipboard
-        klembord.set_with_rich_text('', first_part+'<i>'+title+'</i>'+second_part)
+        klembord.set_with_rich_text(first_part+title+second_part,first_part+'<i>'+title+'</i>'+second_part)
 
         print(title)
 
