@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EIM Bibliography Alphabetical Order</title>
+<meta charset="UTF-8">
+</head>
+
+<body>
+  <textarea class="textarea" style="height: 20vh; width: 100%;">Enter all your sources and separate them by a new line</textarea>
+  <br>
+  <center><button class="sortButton">Sort</button></center><br>
+  <div id="result"></div>
+</body>
+<script type="application/javascript">
+  document.querySelector(".sortButton").addEventListener('click', sort);
+  function sort() {
+    var input = document.querySelector(".textarea").value;
+	var array = input.split("\n").sort(Intl.Collator().compare);
+	var result = "";
+	for(let i=0; i<array.length; i++){
+		if(array[i] != '') {
+			let first_array = array[i].split(").");		
+			let second_array = first_array[1];
+			
+			let third_array = second_array.split(", [En ligne]");
+			
+			let first_part = first_array[0];
+			let second_part = third_array[0];
+			let third_part = third_array[1];
+			
+			let source = first_part + ").<i>" + second_part + "</i>, [En ligne]" + third_part;
+			
+			result += source + "<br><br>";
+		}
+	}
+	document.getElementById('result').innerHTML = result;
+  }
+</script>
+  
+</html>
