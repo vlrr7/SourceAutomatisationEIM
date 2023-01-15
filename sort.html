@@ -6,7 +6,19 @@
 </head>
 
 <body>
-  <textarea class="textarea" style="height: 20vh; width: 100%;">Enter all your sources and separate them by a new line</textarea>
+  <h1>Paste all your sources in EIM's bibliography format separated by a new line here (blank lines are ignored)</h1>
+  <textarea class="textarea" style="height: 20vh; width: 100%;">
+Example:
+Élodie Robert. (Page consultée le 12 mai 2022). En vol! La science des avions… en papier!, [En ligne]. Adresse URL : https://www.centredessciencesdemontreal.com/blogue/en-vol-la-science-des-avions-en-papier
+
+Wikipédia. (Page consultée le 12 mai 2022). Avion, [En ligne]. Adresse URL : https://fr.wikipedia.org/wiki/Avion
+Harvard Natural Sciences Lecture Demonstrations. (Page consultée le 13 mai 2022). Coanda Effect, [En ligne]. Adresse URL : https://www.youtube.com/watch?v=NvzXKZNJ7ZU
+
+Québec Science. (Page consultée le 12 mai 2022). Comment les avions font-ils pour voler en étant si lourds ?, [En ligne]. Adresse URL : https://www.quebecscience.qc.ca/pose-ta-colle/comment-les-avions-font-ils-pour-voler-en-etant-si-lourds/
+Wikipédia. (Page consultée le 13 mai 2022). Turboréacteur, [En ligne]. Adresse URL : https://fr.wikipedia.org/wiki/Turbor%C3%A9acteur
+Pauline Moullot. (Page consultée le 13 mai 2022). Combien coûte un avion de ligne?, [En ligne]. Adresse URL : https://www.slate.fr/lien/59127/combien-coute-avion-ligne
+La Presse canadienne. (Page consultée le 13 mai 2022). Un vol Paris-Montréal propulsé en partie par l'huile de cuisson, [En ligne]. Adresse URL : https://ici.radio-canada.ca/nouvelle/1794165/aviation-essence-pollution-environnement-transport
+  </textarea>
   <br>
   <center><button class="sortButton">Sort</button></center><br>
   <div id="result"></div>
@@ -21,7 +33,7 @@
 		if(array[i] != '') {
 			let first_array = array[i].split(").");		
 			let second_array = first_array[1];
-			
+			if(!second_array || typeof second_array == "undefined") {continue;}
 			let third_array = second_array.split(", [En ligne]");
 			
 			let first_part = first_array[0];
