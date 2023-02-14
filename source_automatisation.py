@@ -32,7 +32,7 @@ while url != "exit" and url != "stop" and url != "quit":
                 title = soup.title.string
 
             # Get author
-            author = "s.a."
+            author = "s.a"
             if soup.find("meta", {"name": "author"}) is not None:
                 author = soup.find("meta", {"name": "author"})["content"]
                 author = author.split(" ")[1].upper() + ", " + author.split(" ")[0].capitalize()
