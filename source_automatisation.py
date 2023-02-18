@@ -6,7 +6,9 @@ import urllib.request as urllib
 klembord.init()
 url = ""
 
+# Select the date
 date = input("Enter date string (jour mois année) (leave blank for today): ")
+# Get current date if nothing is specified
 if date == "":
     # Get today's date
     currDay = datetime.datetime.now().day
@@ -18,6 +20,7 @@ if date == "":
     # Concacenate everything
     date = str(currDay) + " " + month + " " + str(currYear)
 
+# Main function
 while url != "exit" and url != "stop" and url != "quit":
     url = input("\nEnter site link : ")
 
