@@ -13,9 +13,9 @@ if date == "":
     currMonth = datetime.datetime.now().month
     currYear = datetime.datetime.now().year
     # Translate month number to french month name
-    months = ["", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+    months = [None, "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
     month = months[currMonth]
-    # Concacenate everything
+    # Concatenate everything
     date = str(currDay) + " " + month + " " + str(currYear)
 
 while url != "exit" and url != "stop" and url != "quit":
@@ -42,7 +42,7 @@ while url != "exit" and url != "stop" and url != "quit":
 
             # Set HTML formatted clipboard
             klembord.set_with_rich_text(author + first_part + title + second_part, author + first_part + '<i>' + title + '</i>' + second_part)
-            print(author + first_part + title + second_part)
+            print(author + first_part + title + second_part, author + first_part + title + second_part)
             
         except:
             print("Invalid URL, type 'stop', 'exit', or 'quit' to stop the program")
