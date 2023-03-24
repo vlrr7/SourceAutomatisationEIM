@@ -15,9 +15,9 @@ if date == "":
     currMonth = datetime.datetime.now().month
     currYear = datetime.datetime.now().year
     # Translate month number to french month name
-    months = ["", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+    months = [None, "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
     month = months[currMonth]
-    # Concacenate everything
+    # Concatenate everything
     date = str(currDay) + " " + month + " " + str(currYear)
 
 # Main function
